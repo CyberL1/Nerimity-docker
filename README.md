@@ -1,5 +1,26 @@
 # Nerimity-docker
 
+## Requirements
+
+Windows:
+- Windows Subsystem for Linux
+- Docker inside WSL (see <https://docs.docker.com/desktop/wsl>)
+
+Linux:
+- Docker (see <https://docs.docker.com/engine/install> for your own distro)
+
 ## How to run?
 
-There is a small helper scirpt called `nerimity-docker.sh`, just run it and it'll do the rest
+### Windows:
+```ps1
+wsl.exe
+```
+
+```sh
+./nerimity-docker.sh up
+```
+
+### Linux:
+```sh
+./nerimity-docker.sh up
+```
