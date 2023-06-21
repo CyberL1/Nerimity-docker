@@ -1,0 +1,9 @@
+http://local.nerimity.com {
+  reverse_proxy client:3000
+  reverse_proxy /socket.io/* server:3001
+  reverse_proxy /api* server:3001
+  handle /cdn* {
+    uri strip_prefix /cdn
+    reverse_proxy cdn:8003
+  }
+}

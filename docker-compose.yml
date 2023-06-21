@@ -1,0 +1,42 @@
+name: nerimity
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - postgres-data:/var/lib/postgresql
+  redis:
+    image: redis:alpine
+  server:
+    build: server
+    env_file: server/.env
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - 3001:3001
+  client:
+    build: client
+    env_file: client/.env
+    depends_on:
+      - server
+    ports:
+      - 3000:3000
+  cdn:
+    build: cdn
+    ports:
+      - 8003:8003
+    volumes:
+    - ./cdn/public:/cdn/public
+  proxy:
+    image: caddy:alpine
+    ports:
+      - 80:80
+      - 433:433
+      - 433:433/udp
+    volumes:
+      - ./proxy/Caddyfile:/etc/caddy/Caddyfile
+
+volumes:
+  postgres-data:
