@@ -5,4 +5,9 @@ else
   echo Database up to date, skipping...
 fi
 
-pnpm dev
+if [ $DEV_MODE = "true" ]; then
+  pnpm dev
+else
+  pnpm run build
+  pnpm start
+fi
