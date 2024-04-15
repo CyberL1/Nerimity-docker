@@ -34,13 +34,13 @@ CDN_DIR="$PWD/cdn/nerimity-cdn"
 
 if [ ! -d $SERVER_DIR ]; then
   echo Nerimity server is missing, getting latest release..
-  git clone $SERVER_REPO -b $SERVER_VERSION $SERVER_DIR
+  git clone $SERVER_REPO $SERVER_DIR
   echo Done.
 fi
 
 if [ ! -d $CLIENT_DIR ]; then
   echo Nerimity client is missing, getting latest release...
-  git clone $CLIENT_REPO -b $CLIENT_VERSION $CLIENT_DIR
+  git clone $CLIENT_REPO $CLIENT_DIR
   echo Done.
 fi
 
@@ -62,11 +62,11 @@ command_update() {
 
   echo Updating server...
   cd $SERVER_DIR
-  git pull origin $SERVER_VERSION
+  git pull
 
   echo Updating client...
   cd $CLIENT_DIR
-  git pull origin $CLIENT_VERSION
+  git pull
 
   echo Updating CDN...
   cd $CDN_DIR
