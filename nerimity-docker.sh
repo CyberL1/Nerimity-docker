@@ -47,7 +47,7 @@ fi
 if [ ! -d $CDN_DIR ]; then
   echo Nerimity CDN is missing, getting latest release...
   git clone $CDN_REPO $CDN_DIR
-  mv $CDN_DIR/example.config.js $CDN_DIR/config.js
+  mv $CDN_DIR/src/example.config.js $CDN_DIR/src/config.js
   echo Done.
 fi
 
