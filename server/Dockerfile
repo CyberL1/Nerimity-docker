@@ -10,4 +10,6 @@ ENV PNPM_HOME=/usr/local/bin
 RUN npm i -g pnpm
 RUN pnpm add -g nodemon
 RUN pnpm i
-CMD ./entrypoint.sh
+
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ./entrypoint.sh
