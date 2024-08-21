@@ -9,12 +9,6 @@ $0 down - Removes all containers created by nerimity-docker WARNING: database wi
 EOF
 }
 
-get_latest_release() {
-  curl --silent "https://api.github.com/repos/Nerimity/nerimity-$1/releases/latest" |
-  grep '"tag_name":' |
-  sed -E 's/.*"([^"]+)".*/\1/'
-}
-
 # Variables
 
 BASE_URL="https://github.com/Nerimity"
@@ -23,8 +17,6 @@ SERVER_REPO="$BASE_URL/nerimity-server"
 CLIENT_REPO="$BASE_URL/nerimity-web"
 CDN_REPO="$BASE_URL/nerimity-cdn"
 
-SERVER_VERSION="$(get_latest_release server)"
-CLIENT_VERSION="$(get_latest_release web)"
 
 SERVER_DIR="$PWD/server/nerimity-server"
 CLIENT_DIR="$PWD/client/nerimity-web"
