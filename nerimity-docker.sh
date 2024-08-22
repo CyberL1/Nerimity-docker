@@ -17,7 +17,6 @@ SERVER_REPO="$BASE_URL/nerimity-server"
 CLIENT_REPO="$BASE_URL/nerimity-web"
 CDN_REPO="$BASE_URL/nerimity-cdn"
 
-
 SERVER_DIR="$PWD/server/nerimity-server"
 CLIENT_DIR="$PWD/client/nerimity-web"
 CDN_DIR="$PWD/cdn/nerimity-cdn"
@@ -68,7 +67,7 @@ command_update() {
 }
 
 command_build() {
-  sudo docker compose build
+  sudo docker compose build --build-arg VITE_APP_VERSION="$(git -C client/nerimity-web rev-parse HEAD | cut -c -7)"
 }
 
 command_down() {
