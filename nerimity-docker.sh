@@ -15,11 +15,11 @@ BASE_URL="https://github.com/Nerimity"
 
 SERVER_REPO="$BASE_URL/nerimity-server"
 CLIENT_REPO="$BASE_URL/nerimity-web"
-CDN_REPO="$BASE_URL/nerimity-cdn"
+CDN_REPO="$BASE_URL/nerimity-cdn-ts"
 
 SERVER_DIR="$PWD/server/nerimity-server"
 CLIENT_DIR="$PWD/client/nerimity-web"
-CDN_DIR="$PWD/cdn/nerimity-cdn"
+CDN_DIR="$PWD/cdn/nerimity-cdn-ts"
 
 # Auto troubleshoot
 
