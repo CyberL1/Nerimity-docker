@@ -25,6 +25,9 @@ services:
       - 3000:3000
   cdn:
     build: cdn
+    env_file: cdn/.env
+    depends_on:
+      - postgres
     ports:
       - 8003:8003
     volumes:
